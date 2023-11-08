@@ -1,6 +1,8 @@
 # Importing essential libraries and modules
 
 from flask import Flask, redirect, render_template, request, Markup
+app = Flask(__name__)
+app.debug = True
 import numpy as np
 import pandas as pd
 from utils.disease import disease_dic
@@ -268,4 +270,4 @@ def disease_prediction():
 
 # ===============================================================================================
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
