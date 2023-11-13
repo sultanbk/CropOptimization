@@ -1625,3 +1625,20 @@ a.move-top {
 }
 
 /*-- //Responsive design --*/
+.carousel-item img {
+  height: 500px; 
+  width: auto;
+  object-fit: cover;
+	margin-top: 1px;
+}
+.carousel-control-prev, .carousel-control-next {
+  width: 40px; 
+  height: 40px; 
+  background-color: #f0f0f0; 
+  border-radius: 50%; 
+  top: 50%; 
+  transform: translateY(-50%); 
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-size: 100%, 100%;
+}
