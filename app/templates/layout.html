@@ -158,31 +158,50 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" style="background-color: #1C00ff00;">
 		<div class="container">
 			<a class="navbar-brand" href="{{ url_for('home') }}">
-				<img src="{{ url_for('static', filename='images/logo-color.svg') }}" style="width: 90px; height: 90px; border-radius: 50%;
-				object-fit:contain scale-down;" alt="">
+				<img src="{{ url_for('static', filename='images/logo-color.svg') }}" style="width: 100px; height: 100px; border-radius: 50%; 
+				object-fit: contain scale-down;" alt="">
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
 				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
+			<!--For Dropdown List(commented unchnaged)-->
+			<!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="dropdown-menu"></span>
+			</button>-->
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active">
-						<a class="nav-link" href="{{ url_for('home') }}">Home
+						<a class="nav-link" href="{{ url_for('home') }}">
+							<img class="icons" src="{{ url_for('static', filename='images/home.svg') }}">
+							Home
 							<span class="sr-only">(current)</span>
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{{ url_for('crop_recommend') }}">Crop</a>
+						<a class="nav-link" href="{{ url_for('crop_recommend') }}">
+							<img class="icons" src="{{ url_for('static', filename='images/corn-152037.svg') }}">
+							Crop
+						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{{ url_for('fertilizer_recommendation') }}">Fertilizer</a>
+						<a class="nav-link" href="{{ url_for('fertilizer_recommendation') }}">
+							<img class="icons" src="{{ url_for('static', filename='images/ferti.png') }}">
+							Fertilizer
+						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{{ url_for('disease_prediction') }}">Disease</a>
+						<a class="nav-link" href="{{ url_for('disease_prediction') }}">
+							<img class="icons" src="{{ url_for('static', filename='images/disease_icon.png') }}">
+							Disease
+						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{{ url_for('login') }}">Login</a>
+						<a class="nav-link" href="{{ url_for('login') }}" style="padding-top: 4px;">
+							<img class="icons py-1" src="{{ url_for('static', filename='images/login_icon2.png') }}" style="width: 48px; height: 48px; margin-top:15px;">
+							Login
+						</a>
 				</li>
 				</ul>
 			</div>
@@ -221,6 +240,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<p>Made with ❤️ by Atharva</p>
 			<p>&copy; Copyright 2021 Atharva Ingle</p>
 			-->
+			<div class="w3l-copy text-center">
+				<p class="text-da">An Initiation towards Better Yeild and a Happy Farmer<br></p>
+			</div>
+			<p class="homelogo"></p>
 		</div>
 	</footer>
 	<!-- //footer -->

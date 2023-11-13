@@ -758,6 +758,7 @@ footer{
 /*-- copyright --*/
 .w3l-copy p {
     letter-spacing: 1px;
+	color: #d5d5d5;
 }
 
 .w3l-copy p a {

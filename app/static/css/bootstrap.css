@@ -3112,6 +3112,14 @@ input[type="button"].btn-block {
 
 .collapse.show {
   display: block;
+  /*  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 20px;
+  bottom: -260px;
+  z-index: 200;
+  width: 200px;
+  border-radius: 10px;*/
 }
 
 tr.collapse.show {
@@ -3851,11 +3859,18 @@ tbody.collapse.show {
 
 .nav-link {
   display: block;
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 1rem;
+  margin-left: 6px;
+  transition: font-size 0.3s;
 }
 
 .nav-link:hover, .nav-link:focus {
   text-decoration: none;
+  font-size: 2.3ex;
+}
+
+.nav-link:active{
+  opacity: 0.3;
 }
 
 .nav-link.disabled {
@@ -3948,6 +3963,15 @@ tbody.collapse.show {
   justify-content: space-between;
   padding: 0.5rem 1rem;
 }
+.icons{
+  width: 55px;
+  display: block;
+  padding: 5px;
+}
+
+.icons:hover{
+  padding: 6px;
+}
 
 .navbar > .container,
 .navbar > .container-fluid {
@@ -3989,6 +4013,7 @@ tbody.collapse.show {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  /*padding-right: 20px;*/
 }
 
 .navbar-nav .nav-link {
@@ -4008,6 +4033,7 @@ tbody.collapse.show {
 }
 
 .navbar-collapse {
+  background-color: rgb(52, 58, 64);
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
   -webkit-box-flex: 1;
@@ -4016,6 +4042,14 @@ tbody.collapse.show {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  justify-content: center;
+/*position: absolute;
+  right: 70px;*/
+ /* position: absolute;
+  right: 40px;
+  bottom: -250px;
+  z-index: 200;
+  width: 200px;*/
 }
 
 .navbar-toggler {
