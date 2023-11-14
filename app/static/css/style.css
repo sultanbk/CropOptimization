@@ -593,18 +593,21 @@ p.about-text {
 	position: relative;
 }
 .blog-info {
-    background: #fff;
-    padding: 30px;
-    margin-top: -2em;
-    position: absolute;
+    background: #60c344;
+    padding: 10px;
+    
+   
     left: 6%;
     right: 6%;
     top: 200px;
+		text-align: center;
+		
 	box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.08), 0 5px 8px 0 rgba(0, 0, 0, 0.12), 0 1px 14px 0 rgba(0, 0, 0, 0.06);
 }
 .blog-info p {
     letter-spacing: 1px;
     line-height: 28px;
+		
 }
 .blog-info h4 {
     font-size: 22px;
@@ -612,6 +615,7 @@ p.about-text {
     letter-spacing: 2px;
     font-weight: 600;
     text-transform: uppercase;
+		color: #fff;
 }
 .blog-info h4 span.fa {
     color: #009f4d;
@@ -1641,4 +1645,7 @@ a.move-top {
 }
 .carousel-control-prev-icon, .carousel-control-next-icon {
   background-size: 100%, 100%;
+}
+.signle-service{
+	margin-top: 30px;
 }

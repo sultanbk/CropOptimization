@@ -54,44 +54,55 @@
 <!-- Products & Services -->
 <section class="blog py-5">
 	<div class="container py-md-5">
-		<h3 class="heading mb-sm-5 mb-4 text-center"> Our Services</h3>
+		<h3 class="heading project-header team-header text-left"> Our Services</h3><hr color="#60c344">
 		<div class="row blog-grids">
-			<div class="col-lg-4 col-md-6 blog-left mb-lg-0 mb-sm-5 pb-lg-0 pb-5">
+
+			<!--First Service-->
+			<div class="col-sm-2 col-md-3 margin-left-20 ">
+					<img src="{{ url_for('static', filename='images/crop-icon.jpg') }}" class="img-thumbnail img-fliud" alt="" />
 				<a href="{{ url_for('crop_recommend') }}">
-					<img src="{{ url_for('static', filename='images/s3.jpg') }}" class="img-fluid" alt="" />
-				</a>
-				<a href="{{ url_for('crop_recommend') }}">
+
 					<div class="blog-info">
-
 						<h4>Crop</h4>
-
-						<p class="mt-2"> Recommendation about the type of crops to be cultivated which is best suited
-							for the respective conditions</p>
+						<!--<p class="mt-2"> Recommendation about the type of crops to be cultivated which is best suited
+							for the respective conditions</p>-->
 					</div>
 				</a>
 			</div>
-			<div class="col-lg-4 col-md-6 blog-middle mb-lg-0 mb-sm-5 pb-lg-0 pb-md-5">
+
+			<!--Second Service-->
+			<div class="col-sm-2 col-md-3 margin-left-20 ">
+					<img src="{{ url_for('static', filename='/images/ferti.png') }}" class="img-thumbnail img-fliud" alt="" />
 				<a href="{{ url_for('fertilizer_recommendation') }}">
-					<img src="{{ url_for('static', filename='images/s2.jpg') }}" class="img-fluid" alt="" />
-				</a>
-				<a href="{{ url_for('fertilizer_recommendation') }}">
+
 					<div class="blog-info">
 						<h4>Fertilizer</h4>
-						<p class="mt-2">Recommendation about the type of fertilizer best suited for the particular soil
-							and the recommended crop</p>
+						<!--<p class="mt-2">Recommendation about the type of fertilizer best suited for the particular soil
+							and the recommended crop</p>-->
 					</div>
 				</a>
 			</div>
-			<div class="col-lg-4 col-md-6 blog-right mt-lg-0 mt-5 pt-lg-0 pt-md-5">
-				<a href="{{ url_for('disease_prediction') }}">
-					<img src="{{ url_for('static', filename='images/s4.jpg') }}" class="img-fluid" alt="">
-				</a>
 
-				<!-- <img src="images/s4.jpg" class="img-fliud" alt="" /> -->
+			<!--Third Service-->
+			<div class="col-sm-2 col-md-3 margin-left-20 ">
+					<img src="{{ url_for('static', filename='images/disease_icon.png') }}" class="img-thumbnail img-fliud" alt="">
+
 				<a href="{{ url_for('disease_prediction') }}">
 					<div class="blog-info">
 						<h4>Crop Disease</h4>
-						<p class="mt-2">Predicting the name and causes of crop disease and suggestions to cure it</p>
+						<!--<p class="mt-2">Predicting the name and causes of crop disease and suggestions to cure it</p>-->
+					</div>
+				</a>
+			</div>
+
+			<!--Fourth Service-->
+			<div class="col-sm-2 col-md-3 margin-left-20 ">
+					<img src="{{ url_for('static', filename='images/icon_fungicide.png') }}" class="img-thumbnail img-fliud" alt=""><!-- find a suitable icon for "seed price"-->
+				
+				<a href="{{ url_for('disease_prediction') }}">
+					<div class="blog-info">
+						<h4>Seed Price</h4>
+						<!--<p class="mt-2">Predicting the name and causes of crop disease and suggestions to cure it</p>-->
 					</div>
 				</a>
 			</div>
