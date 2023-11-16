@@ -172,7 +172,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</button>-->
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active">
+					<li class="nav-item ">
 						<a class="nav-link" href="{{ url_for('home') }}">
 							<img class="icons" src="{{ url_for('static', filename='images/home.svg') }}">
 							Home
@@ -198,7 +198,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{{ url_for('login') }}" style="padding-top: 4px;">
+						<a class="nav-link" href="{{ url_for('login') }}" style="padding-top: 4px;
+								align-items: center;
+						">
 							<img class="icons py-1" src="{{ url_for('static', filename='images/login_icon2.png') }}" style="width: 48px; height: 48px; margin-top:15px;">
 							Login
 						</a>

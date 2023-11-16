@@ -64,8 +64,10 @@
 
 					<div class="blog-info">
 						<h4>Crop</h4>
-						<!--<p class="mt-2"> Recommendation about the type of crops to be cultivated which is best suited
-							for the respective conditions</p>-->
+						<div class="blog-about mt-1">
+							<p class="mt-2"> Recommendation about the type of crops to be cultivated which is best suited for the respective conditions</p>
+						</div>
+						<!--<p class="mt-2"> Recommendation about the type of crops to be cultivated which is best suitedfor the respective conditions</p>-->
 					</div>
 				</a>
 			</div>
@@ -77,6 +79,9 @@
 
 					<div class="blog-info">
 						<h4>Fertilizer</h4>
+						<div class="blog-about mt-1">
+							<p class="mt-2">Recommendation about the type of fertilizer best suited for the particular soil and the recommended crop</p>
+						</div>
 						<!--<p class="mt-2">Recommendation about the type of fertilizer best suited for the particular soil
 							and the recommended crop</p>-->
 					</div>
@@ -90,6 +95,13 @@
 				<a href="{{ url_for('disease_prediction') }}">
 					<div class="blog-info">
 						<h4>Crop Disease</h4>
+						<div class="blog-about mt-1" 
+						style=" position: absolute;
+							bottom: 30px;
+							right: -10px;
+						">
+							<p class="mt-2">Predicting the name and causes of crop disease and suggestions to cure it</p>
+						</div>
 						<!--<p class="mt-2">Predicting the name and causes of crop disease and suggestions to cure it</p>-->
 					</div>
 				</a>
@@ -102,6 +114,11 @@
 				<a href="{{ url_for('disease_prediction') }}">
 					<div class="blog-info">
 						<h4>Seed Price</h4>
+						<div class="blog-about mt-1" style=" position: absolute;
+						bottom: 30px;
+						right: -10px;">
+							<p class="mt-2"> Seed prices, vital in agriculture, dictate the initial investment for farmers.</p>
+						</div>
 						<!--<p class="mt-2">Predicting the name and causes of crop disease and suggestions to cure it</p>-->
 					</div>
 				</a>
