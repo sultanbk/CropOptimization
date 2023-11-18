@@ -179,6 +179,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<span class="sr-only">(current)</span>
 						</a>
 					</li>
+					{% if current_user.is_authenticated %}
 					<li class="nav-item">
 						<a class="nav-link" href="{{ url_for('crop_recommend') }}">
 							<img class="icons" src="{{ url_for('static', filename='images/corn-152037.svg') }}">
@@ -197,23 +198,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							Disease
 						</a>
 					</li>
+					{% endif %}
 					<li class="nav-item">
-						<a class="nav-link" href="{{ url_for('login') }}" style="padding-top: 4px;
-								align-items: center;
-						">
-							<img class="icons py-1" src="{{ url_for('static', filename='images/login_icon2.png') }}" style="width: 48px; height: 48px; margin-top:15px;">
-							Login
-						</a>
+						{% if current_user.is_authenticated %}
+						< <a class="btn btn-primary" href="{{ url_for('logout') }}" role="button" style="margin-top: 10%; margin-left:75% ; background-color: #60c344;">Logout</a>
+						{% else %}
+						<a class="btn" href="{{ url_for('login') }}" role="button" style="margin-top: 50%; margin-left:75% ; color: #fff; background-color: #60c344;">Login</a>
 				</li>
+				{% endif %}
 				</ul>
 			</div>
 		</div>
 	</nav>
 
-
-
-
-	{% block body %} {% endblock %}
+	{% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+          {% block body %}{% endblock %}
 
 	<!-- footer -->
 	<footer class="text-center py-5">
@@ -235,13 +242,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<!-- <a href="community.html">Community</a> -->
 				</p>
 			</div>
-			<!--<div class="w3l-copy text-center">
-				<p class="text-da">An Environmental Intelligence Startup<br> </p>
-			</div>-->
-			<!--<p class="homelogo">
-			<p>Made with ❤️ by Atharva</p>
-			<p>&copy; Copyright 2021 Atharva Ingle</p>
-			-->
 			<div class="w3l-copy text-center">
 				<p class="text-da">An Initiation towards Better Yeild and a Happy Farmer<br></p>
 			</div>
