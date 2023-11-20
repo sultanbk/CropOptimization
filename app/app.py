@@ -398,6 +398,7 @@ def logout():
 
 
 @ app.route('/crop-predict', methods=['POST'])
+@login_required
 def crop_prediction():
     title = 'Harvestify - Crop Recommendation'
 
@@ -427,6 +428,7 @@ def crop_prediction():
 
 
 @ app.route('/fertilizer-predict', methods=['POST'])
+@login_required
 def fert_recommend():
     title = 'Harvestify - Fertilizer Suggestion'
 
@@ -471,6 +473,7 @@ def fert_recommend():
 
 
 @app.route('/disease-predict', methods=['GET', 'POST'])
+@login_required
 def disease_prediction():
     title = 'Harvestify - Disease Detection'
 
