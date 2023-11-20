@@ -130,6 +130,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link href="{{ url_for('static', filename='css/style.css') }}" rel='stylesheet' type='text/css' />
 	<!-- custom css -->
 	<link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet"><!-- fontawesome css -->
+	<!-- About Us page -->
+	
 	<!-- //css files -->
 	<!-- <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png?') }}"> -->
 
@@ -244,6 +246,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			-->
 			<div class="w3l-copy text-center">
 				<p class="text-da">An Initiation towards Better Yeild and a Happy Farmer<br></p>
+				<a href="{{ url_for('aboutus') }}" class="about-us" style="text-decoration: none; 
+				letter-spacing: 2px;" 
+				data-bs-toggle="tooltip" data-bs-placement="right"
+				title="Click Here">About us <span style="margin-left: 6px ;">&#8226;</span>
+				</a>
+				<a href="" class="about-us" style="text-decoration: none; 
+				letter-spacing: 2px; margin-left: 6px;" data-bs-toggle="tooltip" data-bs-placement="right"
+				title="Click Here">Feedback</a>
 			</div>
 			<p class="homelogo"></p>
 		</div>
@@ -253,6 +263,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- move top icon -->
 	<a href="#top" class="move-top text-center"></a>
 	<!-- //move top icon -->
+	<script>
+		// Initialize tooltips
+		var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+		var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+		  return new bootstrap.Tooltip(tooltipTriggerEl)
+		})
+		</script>
 </body>
 
 </html>
