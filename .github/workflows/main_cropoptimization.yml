@@ -66,4 +66,4 @@ jobs:
         with:
           app-name: 'CropOptimization'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_09382EFA381649B6BE0A77B4D73AB4A0 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C0B3DD38ADD3431CB9871926ACA6F72B }}
