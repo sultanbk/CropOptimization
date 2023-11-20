@@ -291,7 +291,9 @@ def fertilizer_recommendation():
     title = 'CropOptimization - Fertilizer Suggestion'
 
     return render_template('fertilizer.html', title=title)
-
+@app.route('/health')
+def health_check():
+    return 'OK', 200
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
