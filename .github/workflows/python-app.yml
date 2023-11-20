@@ -29,6 +29,12 @@ jobs:
         pip install flake8 pytest
     - name: Install Flask-Login directly
       run: pip install Flask-Login
+    - name: Install Flask-Bcrypt directly
+      run: pip install Flask-Bcrypt
+    - name: Install Flask-Migrate directly
+      run: pip install Flask-Migrate
+    - name: Install Flask-Mail directly
+      run: pip install Flask-Mail
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
