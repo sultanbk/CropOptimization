@@ -158,12 +158,6 @@ def login():
     title = 'Harvestify - Log In'
 
     return render_template('login.html', title=title)
-#about Us page
-@ app.route('/about_us')
-def aboutus():
-    title = 'CropOptimization - About Us'
-
-    return render_template('aboutUs.html', title=title)
 # render disease prediction input page
 
 
