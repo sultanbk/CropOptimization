@@ -1,5 +1,4 @@
 # Importing essential libraries and modules
-
 from flask import Flask, redirect, render_template, request, url_for, flash
 from flask_login import LoginManager, UserMixin, login_user, current_user, logout_user, login_required
 from flask_bcrypt import Bcrypt
@@ -18,7 +17,6 @@ from torchvision import transforms
 from PIL import Image
 from utils.model import ResNet9
 from forms import RegistrationForm, LoginForm
-from flask_login import LoginManager, UserMixin, login_user, current_user, logout_user, login_required
 from utils.disease import disease_dic
 from flask_migrate import Migrate
 from flask_mail import Mail, Message
@@ -147,15 +145,24 @@ def predict_image(img, model=disease_model):
 # ------------------------------------ FLASK APP -------------------------------------------------
 
 
-app = Flask(__name__)
+class LazyDB:
+    def __init__(self, app):
+        self._db = None
+        self.app = app
 
+    @property
+    def db(self):
+        if self._db is None:
+            self._db = SQLAlchemy(self.app)
+        return self._db
+
+app = Flask(__name__)
 app.config['SECRET_KEY']='9dbbb9bfe4a0c0eb93f38a5ee3a851a2'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
-db = SQLAlchemy(app)
-bcrypt = Bcrypt(app)
-migrate = Migrate(app, db)
 
-from flask_mail import Mail, Message
+lazy_db = LazyDB(app)
+bcrypt = Bcrypt(app)
+migrate = Migrate(app, lazy_db.db)
 
 app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
 app.config['MAIL_PORT'] = 465
@@ -193,19 +200,16 @@ login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 login_manager.login_message_category = 'info'
 
-migrate = Migrate(app, db)
-
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-class User(db.Model, UserMixin):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(20), unique=True, nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
-    image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
-    password = db.Column(db.String(60), nullable=False)
-    #posts = db.relationship('Post', backref='author', lazy=True)
+class User(lazy_db.db.Model, UserMixin):
+    id = lazy_db.db.Column(lazy_db.db.Integer, primary_key=True)
+    username = lazy_db.db.Column(lazy_db.db.String(20), unique=True, nullable=False)
+    email = lazy_db.db.Column(lazy_db.db.String(120), unique=True, nullable=False)
+    image_file = lazy_db.db.Column(lazy_db.db.String(20), nullable=False, default='default.jpg')
+    password = lazy_db.db.Column(lazy_db.db.String(60), nullable=False)
     
     def __repr__(self):
         return f"User('{self.username}', '{self.email}', '{self.image_file}')"
@@ -258,7 +262,7 @@ def send_reset_email(user, token):
 
         
 with app.app_context():
-    db.create_all()
+    lazy_db.db.create_all()
     
 class RequestResetForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
@@ -306,8 +310,8 @@ def register():
             return render_template('register.html', title='Register', form=form)
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
         user = User(username=form.username.data, email=form.email.data, password=hashed_password)
-        db.session.add(user)
-        db.session.commit()
+        lazy_db.db.session.add(user)
+        lazy_db.db.session.commit()
         flash('Your account has been created! You are now able to log in', 'success')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
@@ -381,7 +385,7 @@ def reset_password(token):
     if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
         user.password = hashed_password
-        db.session.commit()
+        lazy_db.db.session.commit()
         flash('Your password has been updated! You can now log in.', 'success')
         return redirect(url_for('login'))
     
@@ -502,7 +506,5 @@ def disease_prediction():
             pass
     return render_template('disease.html', title=title)
 
-
-# ===============================================================================================
 if __name__ == '__main__':
     app.run(debug=True)
