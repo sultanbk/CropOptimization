@@ -201,9 +201,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					{% endif %}
 					<li class="nav-item">
 						{% if current_user.is_authenticated %}
-						< <a class="btn btn-primary" href="{{ url_for('logout') }}" role="button" style="margin-top: 10%; margin-left:75% ; background-color: #60c344;">Logout</a>
+						<a class="btn btn-outline-light text-body" href="{{ url_for('logout') }}" role="button" style="margin-top: 50%; margin-left:45%; font-weight: bolder;">Logout</a>
 						{% else %}
-						<a class="btn" href="{{ url_for('login') }}" role="button" style="margin-top: 50%; margin-left:75% ; color: #fff; background-color: #60c344;">Login</a>
+						<a class="btn btn-outline-light text-body" href="{{ url_for('login') }}" role="button" style="margin-top: 50%; margin-left:45% ; font-weight: bolder;">Login</a>
 				</li>
 				{% endif %}
 				</ul>
@@ -244,8 +244,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="w3l-copy text-center">
 				<p class="text-da">An Initiation towards Better Yeild and a Happy Farmer<br></p>
+				<a href="{{ url_for('aboutus') }} " class="about-us text-da" style="text-decoration: none; padding-right: 10px;" class="btn btn-primary" data-bs-toggle="tooltip" title="Click Here" data-bs-placement="left">About Us <span style="padding-left: 10px;">&#8226;</span></a>
+				<a href="" class="about-us" class="btn btn-primary" data-bs-toggle="tooltip" title="Click Here" data-bs-placement="right"> Feedback</a>
 			</div>
-			<p class="homelogo"></p>
 		</div>
 	</footer>
 	<!-- //footer -->
@@ -253,6 +254,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- move top icon -->
 	<a href="#top" class="move-top text-center"></a>
 	<!-- //move top icon -->
+
+	<script>
+		// Initialize tooltips
+		var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+		var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+		  return new bootstrap.Tooltip(tooltipTriggerEl)
+		})
+	</script>
 </body>
 
 </html>
