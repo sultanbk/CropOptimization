@@ -1,0 +1,90 @@
+    <!--
+        <head>
+        <title>About Us</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-wdith, initial-sacle=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Sometype+Mono:wght@600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/aboutUs.css') }} " type='text/css' />
+    </head>
+    -->
+
+    {% extends 'layout.html' %}
+
+    {% block body %}
+        <div class="head">
+            <h1>About Us</h1>
+            <p>Welcome to Crop Optimization!&#128516</p>
+        </div>
+        <div class="container">
+            <section class="about">
+                <div class="about-image">
+                    <img src="{{ url_for('static', filename='images/crop_background.jpg') }}">
+                </div>
+                <div class="about-info">
+                    <div class="about-content">
+                        <h2>Crop Optimization</h2>
+                        <p>At Crop Optimization, we are driven by a shared passion for revolutionizing agriculture through innovative solutions in crop optimization. Our mission is to empower farmers with cutting-edge technologies that enhance crop yields, promote sustainable practices, and contribute to the global effort of ensuring food security.</p>
+                    </div>
+                    <div class="about-content">
+                        <h2>Our Vision</h2>
+                        <p>We see a world where sustainable agriculture methods, data-driven decision-making, and precision farming come together to produce abundant harvests, effective resource use, and prosperous farming communities.</p>
+                        <a href="#section2" onclick="scrollToSection('section2')" class="read-more">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="more-about" id="section2">
+            <h1>What We Do<span class="arrow">&#10549</span></h1>
+            <div class="info1">
+                <h3>Crop Optimization Through Innovation:</h3>
+                <p>We leverage the power of machine learning, data analytics, and technology to optimize every aspect of crop cultivation. From predicting the best planting times to recommending tailored fertilization strategies, our solutions are designed to maximize yields while minimizing environmental impact.</p>
+            </div>
+            <div class="info1" style="margin-top: 20px;">
+                <h3>Sustainability Matters:</h3>
+                <p>We are committed to promoting sustainable agriculture. Our approach integrates eco-friendly practices that safeguard the environment, conserve natural resources, and prioritize the long-term health of our planet.</p>
+            </div>
+        </div>
+        <div class="about-team">
+            <div class="our-team">
+                <h2>Our Team</h2>
+                <p>Our diverse team brings together experts in agriculture, data science, machine learning, and technology. Together, we collaborate to bridge the gap between traditional farming practices and cutting-edge innovations.</p>
+            </div>
+            <div class="why">
+                <h2>Why Choose Crop Optimization?</h2>
+                <p>
+                    <span style="padding: 10px; font-size: 20px;
+                    font-weight: 500; font-stretch:ultra-expanded ">
+                    &#45;
+                </span><strong style="text-decoration: underline;">Innovation at the Core:</strong> We constantly push the boundaries of what's possible in agriculture, integrating the latest technologies to bring you state-of-the-art solutions.
+                </p>
+                <p>
+                    <span style="padding: 10px; font-size: 20px;
+                    font-weight: 500; font-stretch:ultra-expanded ">
+                    &#45;
+                </span><strong style="text-decoration: underline;">Farmers First:</strong> Our focus is on empowering farmers. We believe that by supporting those who work the land, we can create a positive impact on a global scale.
+                </p>
+                <p>
+                    <span style="padding: 10px; font-size: 20px;
+                    font-weight: 500; font-stretch:ultra-expanded ">
+                    &#45;
+                </span><strong style="text-decoration: underline;">Data-Driven Precision:</strong> Our solutions are built on a foundation of accurate data and precise analytics, ensuring that every recommendation is tailored to the unique needs of each farm.
+                </p>
+            </div>
+        </div>
+
+        <div class="thank-you">
+            <h1>Thank you for choosing Crop Optimization.</h1>
+        </div>
+        
+        <script>
+            function scrollToSection(sectionId) {
+                const section = document.getElementById(sectionId);
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        </script>
+
+{% endblock %}

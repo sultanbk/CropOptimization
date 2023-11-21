@@ -330,6 +330,14 @@ def login():
             flash('Login Unsuccessful. Please check email and password', 'danger')
     return render_template('login.html', title='Login', form=form)
 
+#About Us Page
+@ app.route('/about_us')
+def aboutus():
+    title = 'CropOptimization - About Us'
+
+    return render_template('aboutUs.html', title=title)
+
+
 def generate_reset_token(user):
     """
     Generate a unique token for password reset.
@@ -398,6 +406,7 @@ def logout():
 
 
 @ app.route('/crop-predict', methods=['POST'])
+@login_required
 def crop_prediction():
     title = 'Harvestify - Crop Recommendation'
 
@@ -427,6 +436,7 @@ def crop_prediction():
 
 
 @ app.route('/fertilizer-predict', methods=['POST'])
+@login_required
 def fert_recommend():
     title = 'Harvestify - Fertilizer Suggestion'
 
@@ -471,6 +481,7 @@ def fert_recommend():
 
 
 @app.route('/disease-predict', methods=['GET', 'POST'])
+@login_required
 def disease_prediction():
     title = 'Harvestify - Disease Detection'
 

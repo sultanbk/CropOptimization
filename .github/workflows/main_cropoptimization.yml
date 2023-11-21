@@ -28,7 +28,7 @@ jobs:
           source venv/bin/activate
       
       - name: Install dependencies
-        run: pip install -r app/requirements.txt
+        run: pip install -r requirements.txt
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
@@ -66,4 +66,4 @@ jobs:
         with:
           app-name: 'CropOptimization'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C0B3DD38ADD3431CB9871926ACA6F72B }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_14FC7E6CC2354FEABCD35EF003BC1C75 }}
