@@ -328,6 +328,14 @@ def login():
             flash('Login Unsuccessful. Please check email and password', 'danger')
     return render_template('login.html', title='Login', form=form)
 
+#About Us Page
+@ app.route('/about_us')
+def aboutus():
+    title = 'CropOptimization - About Us'
+
+    return render_template('aboutUs.html', title=title)
+
+
 def generate_reset_token(user):
     """
     Generate a unique token for password reset.
