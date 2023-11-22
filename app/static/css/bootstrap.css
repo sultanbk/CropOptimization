@@ -2111,7 +2111,11 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   height: calc(2.875rem + 2px);
 }
 
-.form-group {
+.form-group{
+  margin-bottom: 1rem;
+}
+
+.form-gp {
   margin-bottom: 1rem;
   display: grid;
   grid-template-columns: 350px 350px;

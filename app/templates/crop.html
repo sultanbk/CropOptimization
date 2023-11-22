@@ -16,7 +16,9 @@
   <b>Find out the most suitable crop to grow in your farm</b>
 </h2>
 <br />
-<div>
+<div style="display: grid; grid-template-columns: 1fr 1fr;
+        column-gap: 30px;
+">
   <div
     style="
       width: 50%;
@@ -28,7 +30,7 @@
     "
   >
     <form method="POST" action="{{ url_for('crop_prediction') }}">
-      <div class="form-group">
+      <div class="form-gp">
         <label for="Nitrogen" style="font-size: 17px"><b>Nitrogen <br /> ಸಾರಜನಕ</b></label>
         <input
           type="number"
@@ -37,10 +39,11 @@
           name="nitrogen"
           placeholder="Enter the value (example:50)"
           style="font-weight: bold; border: 2px solid rgb(0, 136, 14);"
+          min="10" max="180"
           required
         />
       </div>
-      <div class="form-group">
+      <div class="form-gp">
         <label for="Phosphorous" style="font-size: 17px"
           ><b>Phosphorous<br />
             ರಂಜಕ</b></label
@@ -51,12 +54,12 @@
           id="Phosphorous"
           name="phosphorous"
           placeholder="Enter the value (example:50)"
-          style="font-weight: bold; border: 2px solid rgb(0, 136, 14);"
+          style="font-weight: bold; border: 2px solid rgb(0, 136, 14);" min="10" max="125"
           required
         />
       </div>
 
-      <div class="form-group">
+      <div class="form-gp">
         <label for="Pottasium" style="font-size: 17px"><b>Pottasium<br />ಪೊಟಾಶಿಯಂ</b></label>
         <input
           type="number"
@@ -64,11 +67,11 @@
           id="Pottasium"
           name="pottasium"
           placeholder="Enter the value (example:50)"
-          style="font-weight: bold; border: 2px solid rgb(0, 136, 14);"
+          style="font-weight: bold; border: 2px solid rgb(0, 136, 14);" min="10" max="200"
           required
         />
       </div>
-      <div class="form-group">
+      <div class="form-gp">
         <label for="ph" style="font-size: 17px"><b>ph Level<br />ಪಿಎಚ್ ಹತ್ತಿರ</b></label>
         <input
           type="number"
@@ -81,7 +84,7 @@
           required
         />
       </div>
-      <div class="form-group">
+      <div class="form-gp">
         <label for="Rainfall" style="font-size: 17px"><b>Rainfall (in mm)<br />ಮಳೆಯ ಪ್ರಮಾಣ(ಮಿಲಿಮೀಟರುಗಳಲ್ಲಿ)</b></label>
         <input
           type="number"
@@ -94,7 +97,7 @@
           required
         />
       </div>
-      <div class="form-group">
+      <div class="form-gp">
         <label for="State" style="font-size: 17px "><b>State<br />ರಾಜ್ಯ</b></label>
         <select
           onchange="print_city('state', this.selectedIndex);"
@@ -106,7 +109,7 @@
           required
         ></select>
 
-        <div class="form-group">
+        <div class="form-gp">
         <label for="City" style="font-size: 17px"><b>City<br />ನಗರ/ಗ್ರಾಮ</b></label>
         <select
           id="state"
@@ -121,16 +124,19 @@
         </script>
       </div>
 
-      <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center align-content-center">
         <button
           type="submit"
-          class="btn btn-info"
+          class="btn btn-outline-success"
           style="color: black; font-weight: bold; width: 130px; height:50px; border-radius:12px; font-size: 21px;"
         >
           Predict
         </button>
       </div>
     </form>
+  </div>
+  <div>
+    <img src="{{ url_for('static', filename='images/Doc1.jpg') }}" style="width: 100%; height: 100%; object-fit: cover; vertical-align: top; object-position: top;" />
   </div>
 </div>
 

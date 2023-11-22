@@ -283,6 +283,7 @@ def home():
 
 
 @ app.route('/crop-recommend')
+@login_required
 def crop_recommend():
     title = 'CropOptimization - Crop Recommendation'
     return render_template('crop.html', title=title)
@@ -291,6 +292,7 @@ def crop_recommend():
 
 
 @ app.route('/fertilizer')
+@login_required
 def fertilizer_recommendation():
     title = 'CropOptimization - Fertilizer Suggestion'
 
@@ -341,6 +343,12 @@ def aboutus():
 
     return render_template('aboutUs.html', title=title)
 
+#Feedback page
+@ app.route('/feedback')
+def feedback():
+    title = 'CropOptimization - Feedback'
+
+    return render_template('feedback.html', title=title)
 
 def generate_reset_token(user):
     """
