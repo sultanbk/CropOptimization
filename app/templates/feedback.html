@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<body>
+     <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScnvxuKQ4vbsEf-bd97Oj4tvWn8wvIQ5cSitJK3TY8YT1NxMw/formResponse" style="display: flex;
+        flex-direction: column;
+        justify-content: center; align-items:center ;
+        margin: 40px;
+     
+     ">
+        <div class="form-gp">
+            <label> Email <span style="color: red;">*</span> </label>
+            <input type="email" name="entry.485428648" placeholder="Email Address" required style="border: 2px solid green; border-radius: 10px;"/>
+        </div>
+
+        <div class="form-gp">
+            <label> Name <span style="color: red;">*</span> </label>
+            <input  type="text" name="entry.932628174" placeholder="Your Name" required />
+        </div>
+
+        <div class="form-gp">
+            <label> Mobile No./Contact no. </label>
+            <input  type="number" name="entry.879531967" placeholder="Phone Number" />
+        </div>
+
+        <div class="form-gp">
+            <label for=""> Feedback Subject <span style="color: red;">*</span> </label><br />
+            <textarea name="entry.1591633300" id="feedback-type" placeholder="Feedback Type" rows="1" cols="4" required style="width: 350px;"></textarea>
+        </div>
+
+        <div class="form-gp"> 
+            <label for=""> Feedback <span style="color: red;">*</span> </label><br />
+            <textarea id="feedback" name="entry.326955045" rows="10" cols="50" required></textarea>
+
+        </div>
+        <button type="submit"> Submit Form </button>
+     </form>
+</body>
+
+{% endblock %}
