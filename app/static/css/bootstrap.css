@@ -5912,12 +5912,15 @@ button.close {
 
 .carousel {
   position: relative;
+  width: 90%;
+  margin: 70px auto;
 }
 
 .carousel-inner {
   position: relative;
   width: 100%;
   overflow: hidden;
+
 }
 
 .carousel-item {

@@ -8,7 +8,8 @@
 <!--Form Section-->
 <br /><br />
 <h2 style="text-align: left; margin-left: 140px; color: black">
-  <b>Get informed advice on fertilizer based on soil</b>
+  <b>Get informed advice on fertilizer based on soil</b><br /><span style="font-size: 18px;">
+    ಮಣ್ಣಿನ ಆಧಾರದ ಮೇಲೆ ಗೊಬ್ಬರದ ಬಗ್ಗೆ ತಿಳುವಳಿಕೆಯುಳ್ಳ ಸಲಹೆ ಪಡೆಯಿರಿ</span>
 </h2>
 <br />
 
@@ -27,7 +28,7 @@ column-gap: 30px;">
   >
     <form method="POST" action="{{ url_for('fert_recommend') }}">
       <div class="form-gp">
-        <label for="Nitrogen" style="font-size: 17px"><b>Nitrogen</b></label>
+        <label for="Nitrogen" style="font-size: 17px"><b>Nitrogen<br/>ಸಾರಜನಕ</b></label>
         <input
           type="number"
           class="form-control"
@@ -40,7 +41,8 @@ column-gap: 30px;">
       </div>
       <div class="form-gp">
         <label for="Phosphorous" style="font-size: 17px"
-          ><b>Phosphorous</b></label
+          ><b>Phosphorous<br />
+            ರಂಜಕ</b></label
         >
         <input
           type="number"
@@ -54,7 +56,7 @@ column-gap: 30px;">
       </div>
 
       <div class="form-gp">
-        <label for="Pottasium" style="font-size: 17px"><b>Pottasium</b></label>
+        <label for="Pottasium" style="font-size: 17px"><b>Pottasium<br />ಪೊಟಾಶಿಯಂ</b></label>
         <input
           type="number"
           class="form-control"
@@ -79,7 +81,7 @@ column-gap: 30px;">
       </div> -->
       <div class="form-gp">
         <label for="crop" style="font-size: 17px"
-          ><b>Crop you want to grow</b></label
+          ><b>Crop you want to grow<br />ನೀವು ಬೆಳೆಯಲು ಇಚ್ಛಿಸುವ ಹೊಡೆ</b></label
         >
         <select
           name="cropname"
@@ -122,14 +124,14 @@ column-gap: 30px;">
           style="
             color: black;
             font-weight: bold;
-            width: 130px;
+            width: 180px;
             height: 50px;
             border-radius: 12px;
             font-size: 21px;
             margin-top: 50px;
           "
         >
-          Predict
+          Predict/ಊಹಿಸಿ
         </button>
       </div>
     </form>
