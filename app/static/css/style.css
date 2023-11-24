@@ -1661,7 +1661,7 @@ a.move-top {
 
 /*-- //Responsive design --*/
 .carousel-item img {
-  height: 500px; 
+  height: 550px; 
   width: auto;
   object-fit: cover;
 	margin-top: 1px;
@@ -1669,13 +1669,15 @@ a.move-top {
 .carousel-control-prev, .carousel-control-next {
   width: 40px; 
   height: 40px; 
-  background-color: #f0f0f0; 
+  background-color: #2fe338; 
   border-radius: 50%; 
   top: 50%; 
+  margin: 0px 20px 0px 20px;
   transform: translateY(-50%); 
 }
 .carousel-control-prev-icon, .carousel-control-next-icon {
   background-size: 100%, 100%;
+  
 }
 .signle-service{
 	margin-top: 30px;
