@@ -1307,7 +1307,12 @@ a.move-top {
 	}
 	.blog-grids {
 		margin-bottom: 100px;
+        flex: 1;
+        justify-content: space-around;
 	}
+    .blog-info h4{
+        font-size: 18px;
+    }
 	.text p {
 		width: 100%;
 	}
@@ -1396,15 +1401,23 @@ a.move-top {
 		width: 100%;
 	}
 	.blog-info {
-		top: 280px;
+		top: 0px;
+
 	}
 	.w3l-copy p {
 		font-size: 16px;
 	}
 	.blog-info h4 {
-		font-size: 20px;
+		font-size: 16px;
 		line-height: 35px;
+        color: #000;
 	}
+    .blog-about p{
+        padding: 4px;
+        font-size: 14px;
+        right: -150px;
+
+    }
 	.welcome-grid span.fa {
 		font-size: 40px;
 	}
@@ -1484,6 +1497,14 @@ a.move-top {
 	.blog-grids {
 		margin-bottom: 70px;
 	}
+    .blog-info{
+        margin-bottom: 40px;
+    }
+    .blog-about p{
+        left: 0;
+        right: 0;
+        top: 70px;
+    }
 	.about-left h5 {
 		font-size: 18px;
 	}
@@ -1661,7 +1682,7 @@ a.move-top {
 
 /*-- //Responsive design --*/
 .carousel-item img {
-  height: 500px; 
+  height: 550px; 
   width: auto;
   object-fit: cover;
 	margin-top: 1px;
@@ -1669,13 +1690,15 @@ a.move-top {
 .carousel-control-prev, .carousel-control-next {
   width: 40px; 
   height: 40px; 
-  background-color: #f0f0f0; 
+  background-color: #2fe338; 
   border-radius: 50%; 
   top: 50%; 
+  margin: 0px 20px 0px 20px;
   transform: translateY(-50%); 
 }
 .carousel-control-prev-icon, .carousel-control-next-icon {
   background-size: 100%, 100%;
+  
 }
 .signle-service{
 	margin-top: 30px;
