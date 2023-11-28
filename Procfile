@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT app:app --log-level debug
+web: waitress-serve --port=$PORT app.app:app --log-level debug
