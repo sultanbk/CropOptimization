@@ -19,7 +19,7 @@ from flask_wtf import FlaskForm
 from wtforms.validators import DataRequired, EqualTo, Email, Length
 from itsdangerous import Serializer
 from sqlalchemy.exc import IntegrityError
-import config
+from . import config
 from utils.model import ResNet9
 from forms import RegistrationForm, LoginForm
 from wtforms import StringField, SubmitField, PasswordField
