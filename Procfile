@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT app.app:app --log-level debug
+web: uwsgi --http :$PORT --wsgi-file app.py --callable app
