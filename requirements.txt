@@ -5,7 +5,7 @@ Flask-Mail==0.9.1
 Flask-Migrate==4.0.5
 Flask-SQLAlchemy==3.0.2
 Flask-WTF==1.2.1
-uwsgi
+gunicorn==20.0.4
 itsdangerous==2.1.2
 numpy
 pandas

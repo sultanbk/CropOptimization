@@ -1,1 +1,1 @@
-web: uwsgi --http :$PORT --ini uwsgi.ini
+web: gunicorn app.app:app --log-level debug
