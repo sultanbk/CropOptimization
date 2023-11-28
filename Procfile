@@ -1,1 +1,1 @@
-web: uwsgi --http :$PORT --wsgi-file app.py --callable app
+web: uwsgi --http :$PORT --ini uwsgi.ini
