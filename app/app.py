@@ -20,10 +20,10 @@ from wtforms.validators import DataRequired, EqualTo, Email, Length
 from itsdangerous import Serializer
 from sqlalchemy.exc import IntegrityError
 from wtforms import StringField, SubmitField, PasswordField
-from forms import RegistrationForm, LoginForm
 from utils.model import ResNet9
 from utils.disease import disease_dic
 from utils.fertilizer import fertilizer_dic
+from forms import RegistrationForm, LoginForm
 import config
 # -------------------------LOADING THE TRAINED MODELS---------
 # Loading plant disease classification model
