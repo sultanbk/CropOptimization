@@ -1,41 +1,31 @@
 # Importing essential libraries and modules
-from flask import Flask, redirect, render_template, request, url_for, flash
+import pickle
+import io
+import random
+from flask import Flask, redirect, render_template, request, flash, url_for,current_app
 from flask_login import LoginManager, UserMixin, login_user, current_user, logout_user, login_required
 from flask_bcrypt import Bcrypt
 from markupsafe import Markup
 from flask_sqlalchemy import SQLAlchemy
 import numpy as np
 import pandas as pd
-from utils.disease import disease_dic
-from utils.fertilizer import fertilizer_dic
 import requests
-import config
-import pickle
-import io
-import torch
 from torchvision import transforms
+import torch
 from PIL import Image
-from utils.model import ResNet9
-from forms import RegistrationForm, LoginForm
-from utils.disease import disease_dic
 from flask_migrate import Migrate
 from flask_mail import Mail, Message
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired, Email
-import random
+from wtforms.validators import DataRequired, EqualTo, Email, Length
 from itsdangerous import Serializer
-import secrets
-from flask import current_app, url_for
-from flask_mail import Message
-from flask_wtf import FlaskForm
-from wtforms import PasswordField, SubmitField
-from wtforms.validators import DataRequired, EqualTo, Length
-# 
-#==============================================================================================
-
-# -------------------------LOADING THE TRAINED MODELS -----------------------------------------------
-
+from sqlalchemy.exc import IntegrityError
+import config
+from utils.model import ResNet9
+from forms import RegistrationForm, LoginForm
+from wtforms import StringField, SubmitField, PasswordField
+from utils.disease import disease_dic
+from utils.fertilizer import fertilizer_dic
+# -------------------------LOADING THE TRAINED MODELS---------
 # Loading plant disease classification model
 
 disease_classes = ['Apple___Apple_scab',
@@ -172,7 +162,6 @@ app.config['MAIL_USERNAME'] = 'sbkhelpdesk258@gmail.com'
 app.config['MAIL_PASSWORD'] = 'imiy lpgt eeum vikw'
 mail = Mail(app)
 
-
 def send_email(to, subject, template):
     print(f"Sending email to {to}")
     try:
@@ -230,9 +219,6 @@ class ResetPasswordForm(FlaskForm):
     password = PasswordField('New Password', validators=[DataRequired(), Length(min=6)])
     confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Reset Password')
-
-import random
-import string
 
 def send_reset_email(user, token):
     """
@@ -300,7 +286,7 @@ def fertilizer_recommendation():
 @app.route('/health')
 def health_check():
     return 'OK', 200
-from sqlalchemy.exc import IntegrityError
+
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
@@ -324,7 +310,7 @@ def register():
             flash('Email already exists. Please choose a different one.', 'danger')
     return render_template('register.html', title='Register', form=form)
 
-from flask import flash, redirect, url_for
+
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
