@@ -300,6 +300,8 @@ def fertilizer_recommendation():
 @app.route('/health')
 def health_check():
     return 'OK', 200
+from sqlalchemy.exc import IntegrityError
+
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
@@ -312,10 +314,14 @@ def register():
             return render_template('register.html', title='Register', form=form)
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
         user = User(username=form.username.data, email=form.email.data, password=hashed_password)
-        lazy_db.db.session.add(user)
-        lazy_db.db.session.commit()
-        flash('Your account has been created! You are now able to log in', 'success')
-        return redirect(url_for('login'))
+        try:
+            lazy_db.db.session.add(user)
+            lazy_db.db.session.commit()
+            flash('Your account has been created! You are now able to log in', 'success')
+            return redirect(url_for('login'))
+        except IntegrityError:
+            lazy_db.db.session.rollback()
+            flash('Email already exists. Please choose a different one.', 'danger')
     return render_template('register.html', title='Register', form=form)
 
 from flask import flash, redirect, url_for
